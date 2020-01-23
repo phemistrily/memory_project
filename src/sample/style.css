@@ -1,0 +1,46 @@
+
+.gridPane{
+    -fx-background-color: #343434;
+}
+.tile{
+    -fx-min-width: 80;
+    -fx-min-height: 120;
+    -fx-max-width: 80;
+    -fx-max-height: 120;
+    -fx-background-color: #0072bc;
+    -fx-background-size: 100%;
+}
+.tileRemove{
+    -fx-background-color: #343434;
+}
+
+.img1{
+    -fx-background-image: url('img/dziecko.png');
+ }
+.img2{
+    -fx-background-image: url('img/kubus.png');
+}
+.img3{
+    -fx-background-image: url('img/lew.png');
+}
+.img4{
+    -fx-background-image: url('img/motyl.png');
+}
+.img5{
+    -fx-background-image: url('img/mysz.png');
+}
+.img6{
+    -fx-background-image: url('img/nosacz.png');
+}
+.img7{
+    -fx-background-image: url('img/panda.png');
+}
+.img8{
+    -fx-background-image: url('img/pani.png');
+}
+.img9{
+    -fx-background-image: url('img/roza.png');
+}
+.img10{
+    -fx-background-image: url('img/samochod.png');
+}
