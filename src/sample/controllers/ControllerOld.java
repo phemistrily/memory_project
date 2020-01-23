@@ -1,4 +1,4 @@
-package sample;
+package sample.controllers;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -6,7 +6,7 @@ import javafx.scene.control.Button;
 
 import java.util.ArrayList;
 
-public class Controller {
+public class ControllerOld {
 
     @FXML
     private Button tile0, tile1, tile2, tile3, tile4;
@@ -60,7 +60,7 @@ public class Controller {
     private Boolean stepLock = false;
 
 
-    public Controller() {
+    public ControllerOld() {
         System.out.println("Controler działa");
     }
 
