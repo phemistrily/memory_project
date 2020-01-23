@@ -69,7 +69,7 @@ public class Controller {
     void initialize() {
         //img1 = "-fx-background-image: url('https://ocdn.eu/pulscms-transforms/1/c2iktkpTURBXy8wNWIxNDFiZmE2ZGNkYmExOGNkMWNjNmMxYzQ5ZTNhMS5qcGeRkwIAzQHk')";
         //img2 = "-fx-background-image: url('https://i.pinimg.com/originals/81/ef/53/81ef53720cd4342e057b99a012fd9a1c.jpg')";
-        //img2 = "-fx-background-image: url('img/nosacz.jpg')"; // lokalny plik nie dziala
+        //img2 = "-fx-background-image: url('sample.img/nosacz.jpg')"; // lokalny plik nie dziala
         //tile1.getStyleClass().add("tileBlank");
         //tile5.setStyle(img1);
 
