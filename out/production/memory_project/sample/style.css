@@ -1,6 +1,16 @@
-
-.gridPane{
+.anchorPane {
     -fx-background-color: #343434;
+    -fx-min-width: 800;
+    -fx-min-height: 600;
+
+
+}
+.buttons{
+    -fx-min-width: 120;
+    -fx-min-height: 70;
+    -fx-color:#0072bc;
+    -fx-font-size:13pt;
+    -fx-font-weight: bold;
 }
 .tile{
     -fx-min-width: 80;
