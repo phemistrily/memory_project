@@ -31,7 +31,7 @@ public class GameController {
     private String[] removeButtonArr = new String[20];
     private ArrayList<String> removeButtonList = new ArrayList<String>(20);
     private Integer countRemoveButton = 0;
-    private Boolean stepLock = true;
+    private Boolean stepLock = false;
 
     public GameController() {
         System.out.println("Controler działa");

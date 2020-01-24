@@ -18,6 +18,8 @@ public class Main extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("fxmlData/index.fxml"));
         primaryStage.setTitle("Gra memory");
         primaryStage.setScene(new Scene(root, 800, 600));
+
+        primaryStage.setResizable(false);
         primaryStage.show();
     }
 
