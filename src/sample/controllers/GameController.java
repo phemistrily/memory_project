@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -18,6 +19,8 @@ public class GameController {
     private Button tile10, tile11, tile12, tile13, tile14;
     @FXML
     private Button tile15, tile16, tile17, tile18, tile19;
+    @FXML
+    private Label playerFirstPoints;
 
     private String[] tilesMap = {
             "img1", "img2", "img3", "img4", "img5",
@@ -32,6 +35,9 @@ public class GameController {
     private ArrayList<String> removeButtonList = new ArrayList<String>(20);
     private Integer countRemoveButton = 0;
     private Boolean stepLock = false;
+    private Integer playerPoints = 1000;
+    private Integer penaltyPoints = 100;
+    private Integer bonusPoints = 500;
 
     public GameController() {
         System.out.println("Controler działa");
@@ -55,6 +61,7 @@ public class GameController {
     void initialize() {
         this.tilesMap = shuffleArray(this.tilesMap);
         System.out.println(this.tilesMap);
+        this.playerFirstPoints.setText(String.valueOf(this.playerPoints));
         //img1 = "-fx-background-image: url('https://ocdn.eu/pulscms-transforms/1/c2iktkpTURBXy8wNWIxNDFiZmE2ZGNkYmExOGNkMWNjNmMxYzQ5ZTNhMS5qcGeRkwIAzQHk')";
         //img2 = "-fx-background-image: url('https://i.pinimg.com/originals/81/ef/53/81ef53720cd4342e057b99a012fd9a1c.jpg')";
         //img2 = "-fx-background-image: url('sample.img/nosacz.jpg')"; // lokalny plik nie dziala
@@ -73,6 +80,7 @@ public class GameController {
                 System.out.println("kafelek został już dopasowany - nie możemy odsłonić");
             } else {
                 showTiles(clickedButton);
+                this.playerFirstPoints.setText(String.valueOf(this.playerPoints));
                 System.out.println(clickedButton.getId());
             }
         }
@@ -84,6 +92,7 @@ public class GameController {
 
             alert.showAndWait();
         }
+
     }
 
     /**
@@ -120,6 +129,7 @@ public class GameController {
     public void checkShowTiles(){
         if(showImgArr[0] == showImgArr[1] && showImgArr[2] != showImgArr[3]){
             removeTiles();
+            this.playerPoints -= this.bonusPoints;
             countClickedTiles = 0;
             if(countRemoveButton == 20){
                 System.out.println("koniec gry");
@@ -132,6 +142,7 @@ public class GameController {
             }
         } else {
             hideTiles();    //ukrywam kafelki
+            this.playerPoints += this.penaltyPoints;
             countClickedTiles = 0;  //ustawiam countClickedTiles na 0 aby móc dalej odkrywać kafelki
             /**
              * stepLock = true;     np blokada w tym programie i to co poniżej
