@@ -30,11 +30,9 @@ public class ClientController {
                 InputStream input = socket.getInputStream();
                 BufferedReader reader = new BufferedReader(new InputStreamReader(input));
 
-                this.startGame = Boolean.valueOf(reader.readLine());
                 String time = reader.readLine();
                 this.myPort = Integer.valueOf(reader.readLine());
 
-                System.out.println(this.startGame);
                 System.out.println(time);
                 System.out.println(myPort);
 
@@ -48,6 +46,12 @@ public class ClientController {
                 System.out.println("I/O error: " + ex.getMessage());
             }
         }
+
+        public void lookForPlayer()
+        {
+
+        }
+
 
         public void makeMove(Integer playerPoints, Boolean stepLock, String[] tilesMap, ArrayList<String> removeButtonList)
         {
