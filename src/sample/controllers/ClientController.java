@@ -9,13 +9,15 @@ import java.net.UnknownHostException;
 import java.util.ArrayList;
 
 public class ClientController {
-    String hostname = "localhost";
-    Integer port = 7172;
-    Integer playerPoints1;
-    Integer playerPoints2;
-    Boolean stepLock;
-    String[] tilesMap;
-    ArrayList<String> removeButtonList;
+    private Integer myPort;
+    public Boolean startGame;
+    public String hostname = "localhost";
+    public Integer port = 7172;
+    public Integer playerPoints1;
+    public Integer playerPoints2;
+    public Boolean stepLock;
+    public String[] tilesMap;
+    public ArrayList<String> removeButtonList;
 
         public ClientController(Integer playerPoints, Boolean stepLock, String[] tilesMap, ArrayList<String> removeButtonList) {
             this.playerPoints1 = playerPoints;
@@ -28,9 +30,13 @@ public class ClientController {
                 InputStream input = socket.getInputStream();
                 BufferedReader reader = new BufferedReader(new InputStreamReader(input));
 
+                this.startGame = Boolean.valueOf(reader.readLine());
                 String time = reader.readLine();
+                this.myPort = Integer.valueOf(reader.readLine());
 
+                System.out.println(this.startGame);
                 System.out.println(time);
+                System.out.println(myPort);
 
 
             } catch (UnknownHostException ex) {
