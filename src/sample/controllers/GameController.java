@@ -38,6 +38,7 @@ public class GameController {
     private Integer playerPoints = 1000;
     private Integer penaltyPoints = 100;
     private Integer bonusPoints = 500;
+    private ClientController client;
 
     public GameController() {
         System.out.println("Controler działa");
@@ -62,6 +63,7 @@ public class GameController {
         this.tilesMap = shuffleArray(this.tilesMap);
         System.out.println(this.tilesMap);
         this.playerFirstPoints.setText(String.valueOf(this.playerPoints));
+        this.client = new ClientController(this.playerPoints, this.stepLock, this.tilesMap, this.removeButtonList);
         //img1 = "-fx-background-image: url('https://ocdn.eu/pulscms-transforms/1/c2iktkpTURBXy8wNWIxNDFiZmE2ZGNkYmExOGNkMWNjNmMxYzQ5ZTNhMS5qcGeRkwIAzQHk')";
         //img2 = "-fx-background-image: url('https://i.pinimg.com/originals/81/ef/53/81ef53720cd4342e057b99a012fd9a1c.jpg')";
         //img2 = "-fx-background-image: url('sample.img/nosacz.jpg')"; // lokalny plik nie dziala
@@ -92,7 +94,7 @@ public class GameController {
 
             alert.showAndWait();
         }
-
+        this.client.makeMove(this.playerPoints, this.stepLock, this.tilesMap, this.removeButtonList);
     }
 
     /**
@@ -129,7 +131,7 @@ public class GameController {
     public void checkShowTiles(){
         if(showImgArr[0] == showImgArr[1] && showImgArr[2] != showImgArr[3]){
             removeTiles();
-            this.playerPoints -= this.bonusPoints;
+            this.playerPoints += this.bonusPoints;
             countClickedTiles = 0;
             if(countRemoveButton == 20){
                 System.out.println("koniec gry");
@@ -142,7 +144,7 @@ public class GameController {
             }
         } else {
             hideTiles();    //ukrywam kafelki
-            this.playerPoints += this.penaltyPoints;
+            this.playerPoints -= this.penaltyPoints;
             countClickedTiles = 0;  //ustawiam countClickedTiles na 0 aby móc dalej odkrywać kafelki
             /**
              * stepLock = true;     np blokada w tym programie i to co poniżej
