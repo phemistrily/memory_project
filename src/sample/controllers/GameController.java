@@ -6,11 +6,12 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 
-import java.util.ArrayList;
-import java.util.Random;
+import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class GameController {
+    @FXML
+    public Label waitingForPlayer;
     @FXML
     private Button tile0, tile1, tile2, tile3, tile4;
     @FXML
@@ -21,6 +22,8 @@ public class GameController {
     private Button tile15, tile16, tile17, tile18, tile19;
     @FXML
     private Label playerFirstPoints;
+    @FXML
+    private Label playerSecondPoints;
 
     private String[] tilesMap = {
             "img1", "img2", "img3", "img4", "img5",
@@ -63,7 +66,11 @@ public class GameController {
         this.tilesMap = shuffleArray(this.tilesMap);
         System.out.println(this.tilesMap);
         this.playerFirstPoints.setText(String.valueOf(this.playerPoints));
+        this.playerSecondPoints.setText(String.valueOf(this.playerPoints));
         this.client = new ClientController(this.playerPoints, this.stepLock, this.tilesMap, this.removeButtonList);
+        MyTimerTask task = new MyTimerTask(this.client);
+
+
         //img1 = "-fx-background-image: url('https://ocdn.eu/pulscms-transforms/1/c2iktkpTURBXy8wNWIxNDFiZmE2ZGNkYmExOGNkMWNjNmMxYzQ5ZTNhMS5qcGeRkwIAzQHk')";
         //img2 = "-fx-background-image: url('https://i.pinimg.com/originals/81/ef/53/81ef53720cd4342e057b99a012fd9a1c.jpg')";
         //img2 = "-fx-background-image: url('sample.img/nosacz.jpg')"; // lokalny plik nie dziala
