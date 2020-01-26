@@ -1,10 +1,14 @@
 package sample.controllers;
 
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.util.Duration;
 
 import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
@@ -67,8 +71,10 @@ public class GameController {
         System.out.println(this.tilesMap);
         this.playerFirstPoints.setText(String.valueOf(this.playerPoints));
         this.playerSecondPoints.setText(String.valueOf(this.playerPoints));
-        this.client = new ClientController(this.playerPoints, this.stepLock, this.tilesMap, this.removeButtonList);
-        MyTimerTask task = new MyTimerTask(this.client);
+        this.client = new ClientController();
+        Timer timer = new Timer();
+        timer.scheduleAtFixedRate(new MyTimerTask(this), 2000, 2000);
+        this.client.start();
 
 
         //img1 = "-fx-background-image: url('https://ocdn.eu/pulscms-transforms/1/c2iktkpTURBXy8wNWIxNDFiZmE2ZGNkYmExOGNkMWNjNmMxYzQ5ZTNhMS5qcGeRkwIAzQHk')";
@@ -101,7 +107,6 @@ public class GameController {
 
             alert.showAndWait();
         }
-        this.client.makeMove(this.playerPoints, this.stepLock, this.tilesMap, this.removeButtonList);
     }
 
     /**
