@@ -29,18 +29,14 @@ public class GameController {
     @FXML
     private Label playerSecondPoints;
 
-    private String[] tilesMap = {
-            "img1", "img2", "img3", "img4", "img5",
-            "img7", "img10", "img6", "img2", "img8",
-            "img3", "img4", "img9", "img7", "img10",
-            "img9", "img5", "img1", "img8", "img6",
-    };
+    protected String[] tilesMap;
+
     private String[] showImgArr = new String[4];
     private Button[] showButtonArr = new Button[2];
     private Integer countClickedTiles = 0;
     private String[] removeButtonArr = new String[20];
-    private ArrayList<String> removeButtonList = new ArrayList<String>(20);
-    private Integer countRemoveButton = 0;
+    private ArrayList<String> removeButtonList = new ArrayList<String>(20);//usuniete
+    private Integer countRemoveButton = 0; // koniec gry jak 20
     private Boolean stepLock = false;
     private Integer playerPoints = 1000;
     private Integer penaltyPoints = 100;
@@ -67,29 +63,19 @@ public class GameController {
 
     @FXML
     void initialize() {
-        this.tilesMap = shuffleArray(this.tilesMap);
-        System.out.println(this.tilesMap);
         this.playerFirstPoints.setText(String.valueOf(this.playerPoints));
         this.playerSecondPoints.setText(String.valueOf(this.playerPoints));
         this.client = new ClientController();
-        Timer timer = new Timer();
-        timer.scheduleAtFixedRate(new MyTimerTask(this), 2000, 2000);
+        
         this.client.start();
-
-
-        //img1 = "-fx-background-image: url('https://ocdn.eu/pulscms-transforms/1/c2iktkpTURBXy8wNWIxNDFiZmE2ZGNkYmExOGNkMWNjNmMxYzQ5ZTNhMS5qcGeRkwIAzQHk')";
-        //img2 = "-fx-background-image: url('https://i.pinimg.com/originals/81/ef/53/81ef53720cd4342e057b99a012fd9a1c.jpg')";
-        //img2 = "-fx-background-image: url('sample.img/nosacz.jpg')"; // lokalny plik nie dziala
-        //tile1.getStyleClass().add("tileBlank");
-        //tile5.setStyle(img1);
-
+        Timer timer = new Timer();
+        timer.scheduleAtFixedRate(new MyTimerTask(this, this.client), 2000, 2000);
     }
 
     @FXML
     public void tileClick(ActionEvent event) {
         Button clickedButton = (Button) event.getSource();
-
-        if(!stepLock){
+        if(!client.stepLock){
             if(removeButtonList.contains(clickedButton.getId())){
                 System.out.println(clickedButton.getId());
                 System.out.println("kafelek został już dopasowany - nie możemy odsłonić");
@@ -156,6 +142,7 @@ public class GameController {
             }
         } else {
             hideTiles();    //ukrywam kafelki
+            this.client.makeWrongMove(this.showImgArr);
             this.playerPoints -= this.penaltyPoints;
             countClickedTiles = 0;  //ustawiam countClickedTiles na 0 aby móc dalej odkrywać kafelki
             /**
