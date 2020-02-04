@@ -37,7 +37,7 @@ public class GameController {
     private String[] removeButtonArr = new String[20];
     private ArrayList<String> removeButtonList = new ArrayList<String>(20);//usuniete
     private Integer countRemoveButton = 0; // koniec gry jak 20
-    private Boolean stepLock = false;
+    public Boolean stepLock = false;
     private Integer playerPoints = 1000;
     private Integer penaltyPoints = 100;
     private Integer bonusPoints = 500;
@@ -75,7 +75,7 @@ public class GameController {
     @FXML
     public void tileClick(ActionEvent event) {
         Button clickedButton = (Button) event.getSource();
-        if(!client.stepLock){
+        if(!stepLock){
             if(removeButtonList.contains(clickedButton.getId())){
                 System.out.println(clickedButton.getId());
                 System.out.println("kafelek został już dopasowany - nie możemy odsłonić");
@@ -142,7 +142,7 @@ public class GameController {
             }
         } else {
             hideTiles();    //ukrywam kafelki
-            this.client.makeWrongMove(this.showImgArr);
+            //this.client.makeWrongMove(this.showImgArr);
             this.playerPoints -= this.penaltyPoints;
             countClickedTiles = 0;  //ustawiam countClickedTiles na 0 aby móc dalej odkrywać kafelki
             /**

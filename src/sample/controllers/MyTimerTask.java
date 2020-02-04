@@ -13,6 +13,7 @@ class MyTimerTask extends TimerTask {
 
     @Override
     public void run() {
+        this.param.stepLock = this.client.stepLock;
         this.param.waitingForPlayer.setVisible(false);
         this.param.tilesMap = this.client.tilesMap.toArray(new String[0]);
         for (int i = 0; i < this.param.tilesMap.length;i++)

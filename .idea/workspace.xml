@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/lib/gson-2.8.6.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/memory_project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/memory_project.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/memory_project/sample/controllers/ClientController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/memory_project/sample/controllers/ClientController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/memory_project/sample/controllers/GameController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/memory_project/sample/controllers/GameController$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/memory_project/sample/controllers/GameController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/memory_project/sample/controllers/GameController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/memory_project/sample/controllers/MyTimerTask.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/memory_project/sample/controllers/MyTimerTask.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sample/controllers/ClientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/controllers/ClientController.java" afterDir="false" />
@@ -107,7 +108,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sample/controllers/IndexController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="663">
+            <state relative-caret-position="576">
               <caret line="51" column="57" selection-start-line="51" selection-start-column="57" selection-end-line="51" selection-end-column="57" />
             </state>
           </provider>
@@ -116,18 +117,18 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sample/fxmlData/game.fxml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1224">
+            <state relative-caret-position="1149">
               <caret line="72" column="36" selection-start-line="72" selection-start-column="36" selection-end-line="72" selection-end-column="36" />
             </state>
           </provider>
           <provider editor-type-id="JavaFX-Scene-Builder" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/sample/controllers/GameController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="144" column="37" lean-forward="true" selection-start-line="144" selection-start-column="37" selection-end-line="144" selection-end-column="37" />
+            <state relative-caret-position="293">
+              <caret line="161" column="388" selection-start-line="161" selection-start-column="388" selection-end-line="161" selection-end-column="388" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -138,19 +139,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sample/controllers/MyTimerTask.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="74" lean-forward="true" selection-start-line="16" selection-start-column="74" selection-end-line="20" selection-end-column="9" />
+            <state relative-caret-position="391">
+              <caret line="23" column="1" lean-forward="true" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sample/controllers/ClientController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="851">
-              <caret line="61" column="8" lean-forward="true" selection-start-line="61" selection-start-column="8" selection-end-line="61" selection-end-column="36" />
+            <state relative-caret-position="425">
+              <caret line="25" column="29" lean-forward="true" selection-start-line="25" selection-start-column="29" selection-end-line="25" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#271#279#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -174,6 +176,7 @@
       <find>gracz</find>
       <find>clientcon</find>
       <find>steplock</find>
+      <find>showImgArr</find>
     </findStrings>
   </component>
   <component name="FindManager">
@@ -198,16 +201,15 @@
         <option value="$PROJECT_DIR$/src/sample/controllers/IndexController.java" />
         <option value="$PROJECT_DIR$/src/sample/fxmlData/game.fxml" />
         <option value="$PROJECT_DIR$/src/sample/controllers/MyTimerTask.java" />
-        <option value="$PROJECT_DIR$/src/sample/controllers/GameController.java" />
         <option value="$PROJECT_DIR$/src/sample/controllers/ClientController.java" />
+        <option value="$PROJECT_DIR$/src/sample/controllers/GameController.java" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="967" />
-    <option name="y" value="120" />
-    <option name="width" value="1265" />
+    <option name="x" value="1115" />
+    <option name="width" value="1452" />
     <option name="height" value="1047" />
   </component>
   <component name="ProjectId" id="1WoZaaZ6OFd7L6T6Ah7sMHbyzTR" />
@@ -283,23 +285,19 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="dynamic.classpath" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/memory-game-server-master (1)/memory-game-server-master/src" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/gson-2.8.6.jar!/" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="recentsLimit" value="5" />
     <property name="settings.editor.selected.configurable" value="com.poratu.idea.plugins.tomcat.setting.TomcatSettingConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\study\Desktop\JAVA\memory_project\src" />
-      <recent name="C:\Users\Phemistrily\Documents\memory_project\src\sample" />
-      <recent name="C:\Users\Phemistrily\Documents\memory_project\src" />
-    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="sample.controllers" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Phemistrily\Documents\memory_project\lib" />
       <recent name="C:\Users\Phemistrily\Documents\memory_project\src\sample\fxmlData" />
       <recent name="C:\Users\Phemistrily\Documents\memory_project\src\sample" />
       <recent name="C:\Users\Phemistrily\Documents\memory_project\src\sample\fxmlData" />
@@ -408,10 +406,10 @@
     <option name="totallyTimeSpent" value="1302000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="967" y="120" width="1265" height="1047" extended-state="0" />
+    <frame x="1115" y="0" width="1452" height="1047" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.20912863" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.18534483" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" />
       <window_info id="Designer" order="3" />
@@ -420,7 +418,7 @@
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32968238" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.23877327" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.23877327" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3991323" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -450,7 +448,7 @@
       <window_info anchor="right" id="Theme Preview" order="11" />
     </layout>
     <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.114268064" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.18534483" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" />
       <window_info id="Designer" order="3" />
@@ -459,7 +457,7 @@
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32968238" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.26725084" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.23877327" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3991323" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -545,13 +543,6 @@
     <entry file="file://$PROJECT_DIR$/src/sample/controllers/SqlInterface.java">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/controllers/SqlConnector.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="34" column="22" selection-start-line="34" selection-start-column="22" selection-end-line="34" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/fxmlData/index.fxml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -560,42 +551,50 @@
       </provider>
       <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/controllers/IndexController.java">
+    <entry file="file://$PROJECT_DIR$/src/sample/controllers/SqlConnector.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="51" column="57" selection-start-line="51" selection-start-column="57" selection-end-line="51" selection-end-column="57" />
+        <state relative-caret-position="578">
+          <caret line="34" column="22" selection-start-line="34" selection-start-column="22" selection-end-line="34" selection-end-column="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/fxmlData/game.fxml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1224">
+        <state relative-caret-position="1149">
           <caret line="72" column="36" selection-start-line="72" selection-start-column="36" selection-end-line="72" selection-end-column="36" />
         </state>
       </provider>
       <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/controllers/MyTimerTask.java">
+    <entry file="file://$PROJECT_DIR$/src/sample/controllers/IndexController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="74" lean-forward="true" selection-start-line="16" selection-start-column="74" selection-end-line="20" selection-end-column="9" />
+        <state relative-caret-position="576">
+          <caret line="51" column="57" selection-start-line="51" selection-start-column="57" selection-end-line="51" selection-end-column="57" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/controllers/GameController.java">
+    <entry file="file://$PROJECT_DIR$/src/sample/controllers/MyTimerTask.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="144" column="37" lean-forward="true" selection-start-line="144" selection-start-column="37" selection-end-line="144" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="391">
+          <caret line="23" column="1" lean-forward="true" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/controllers/ClientController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="851">
-          <caret line="61" column="8" lean-forward="true" selection-start-line="61" selection-start-column="8" selection-end-line="61" selection-end-column="36" />
+        <state relative-caret-position="425">
+          <caret line="25" column="29" lean-forward="true" selection-start-line="25" selection-start-column="29" selection-end-line="25" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#271#279#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/controllers/GameController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="293">
+          <caret line="161" column="388" selection-start-line="161" selection-start-column="388" selection-end-line="161" selection-end-column="388" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
