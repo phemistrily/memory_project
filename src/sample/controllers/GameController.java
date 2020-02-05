@@ -37,11 +37,11 @@ public class GameController {
     private String[] removeButtonArr = new String[20];
     private ArrayList<String> removeButtonList = new ArrayList<String>(20);//usuniete
     private Integer countRemoveButton = 0; // koniec gry jak 20
-    public Boolean stepLock = false;
+    public Boolean stepLock = true;
     private Integer playerPoints = 1000;
     private Integer penaltyPoints = 100;
     private Integer bonusPoints = 500;
-    private ClientController client;
+    protected ClientController client;
 
     public GameController() {
         System.out.println("Controler działa");
@@ -69,13 +69,13 @@ public class GameController {
         
         this.client.start();
         Timer timer = new Timer();
-        timer.scheduleAtFixedRate(new MyTimerTask(this, this.client), 2000, 2000);
+        timer.scheduleAtFixedRate(new MyTimerTask(this), 2000, 2000);
     }
 
     @FXML
     public void tileClick(ActionEvent event) {
         Button clickedButton = (Button) event.getSource();
-        if(!stepLock){
+        if(stepLock){
             if(removeButtonList.contains(clickedButton.getId())){
                 System.out.println(clickedButton.getId());
                 System.out.println("kafelek został już dopasowany - nie możemy odsłonić");
@@ -127,6 +127,7 @@ public class GameController {
      * Sprawdza czy odkryte kafelki są takie same
      */
     public void checkShowTiles(){
+        this.client.makeMove(showImgArr);
         if(showImgArr[0] == showImgArr[1] && showImgArr[2] != showImgArr[3]){
             removeTiles();
             this.playerPoints += this.bonusPoints;
@@ -142,7 +143,6 @@ public class GameController {
             }
         } else {
             hideTiles();    //ukrywam kafelki
-            //this.client.makeWrongMove(this.showImgArr);
             this.playerPoints -= this.penaltyPoints;
             countClickedTiles = 0;  //ustawiam countClickedTiles na 0 aby móc dalej odkrywać kafelki
             /**

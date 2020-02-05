@@ -2,7 +2,6 @@ package sample.controllers;
 
 import java.io.*;
 import java.net.Socket;
-import java.net.UnknownHostException;
 import java.util.ArrayList;
 import com.google.gson.Gson;
 
@@ -11,7 +10,7 @@ public class ClientController extends Thread {
     protected ArrayList<String> tilesMap = new ArrayList<String>();
     private final static Gson GSON = new Gson();
     public Boolean stepLock = false;
-
+    PrintWriter writer;
     public ClientController() {
     }
 
@@ -21,7 +20,7 @@ public class ClientController extends Thread {
             final int serverPort = 7171;
             Socket socket = new Socket("localhost", serverPort);
             DataOutputStream output = new DataOutputStream(socket.getOutputStream());
-            PrintWriter writer = new PrintWriter(output, true);
+            writer = new PrintWriter(output, true);
             writer.println("Hello to the server, from " + socket.getLocalPort());
             writer.println();
             writer.flush();
@@ -33,9 +32,12 @@ public class ClientController extends Thread {
             while ((line = reader.readLine()) != null) {
                 if (line.equals("get_move")) {
                     this.stepLock = true;
-                    writer.println(GSON.toJson(
-                            new GameMoveDto(new GameMoveDto.TileDto(1, "img"), new GameMoveDto.TileDto(2, "img"))));
-                    writer.flush();
+                    System.out.println("Twoj ruch");
+                }
+                if (line.equals("[broadcast]:Game pushed")) {
+                    while((line = reader.readLine()) != "endTilesMap") {
+                        tilesMap.add(line);
+                    }
                 }
                 System.out.println(line);
             }
@@ -44,9 +46,13 @@ public class ClientController extends Thread {
             System.out.println("Exception " + ex.getMessage());
         }
     }
-    public
-
-    static class GameMoveDto {
+    public void makeMove(String[] showImgArr) {
+        this.stepLock = false;
+        writer.println(GSON.toJson(
+                new GameMoveDto(new GameMoveDto.TileDto(showImgArr[0], showImgArr[2]), new GameMoveDto.TileDto(showImgArr[1], showImgArr[3]))));
+        writer.flush();
+    }
+    public static class GameMoveDto {
         TileDto tile1;
         TileDto tile2;
 
@@ -56,10 +62,10 @@ public class ClientController extends Thread {
         }
 
         static class TileDto {
-            int idx;
+            String idx;
             String image;
 
-            public TileDto(int idx, String image) {
+            public TileDto(String idx, String image) {
                 this.idx = idx;
                 this.image = image;
             }
