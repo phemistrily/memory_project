@@ -2,6 +2,7 @@ package sample.controllers;
 
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -28,8 +29,15 @@ public class GameController {
     private Label playerFirstPoints;
     @FXML
     private Label playerSecondPoints;
+    @FXML
+    public Label movePlayerLabel;
 
-    protected String[] tilesMap;
+    protected String[] tilesMap = {
+            "img1", "img2", "img3", "img4", "img5",
+            "img7", "img10", "img6", "img2", "img8",
+            "img3", "img4", "img9", "img7", "img10",
+            "img9", "img5", "img1", "img8", "img6",
+    };
 
     private String[] showImgArr = new String[4];
     private Button[] showButtonArr = new Button[2];
@@ -68,14 +76,29 @@ public class GameController {
         this.client = new ClientController();
         
         this.client.start();
+//        Timer timer = new java.util.Timer();
+//
+//        timer.schedule(new TimerTask() {
+//            public void run() {
+//                Platform.runLater(new Runnable() {
+//                    public void run() {
+//                        movePlayerLabel.setText("dupa");
+//                    }
+//                });
+//            }
+//        }, 2000, 2000);
         Timer timer = new Timer();
-        timer.scheduleAtFixedRate(new MyTimerTask(this), 2000, 2000);
+        timer.schedule(new MyTimerTask(this), 2000, 2000);
     }
 
     @FXML
     public void tileClick(ActionEvent event) {
+//        for (int i = 0; i < this.tilesMap.length;i++)
+//        {
+//            System.out.println(this.tilesMap[i]);
+//        }
         Button clickedButton = (Button) event.getSource();
-        if(stepLock){
+        if(client.stepLock){
             if(removeButtonList.contains(clickedButton.getId())){
                 System.out.println(clickedButton.getId());
                 System.out.println("kafelek został już dopasowany - nie możemy odsłonić");
@@ -107,6 +130,7 @@ public class GameController {
             showImg(clickedButton, countClickedTiles); //TODO
             countClickedTiles++;
             if(countClickedTiles == 2){
+                client.sendMessage(clickedButton);
                 Thread thread = new Thread(new Runnable() {
                     @Override
                     public void run() {
@@ -127,7 +151,6 @@ public class GameController {
      * Sprawdza czy odkryte kafelki są takie same
      */
     public void checkShowTiles(){
-        this.client.makeMove(showImgArr);
         if(showImgArr[0] == showImgArr[1] && showImgArr[2] != showImgArr[3]){
             removeTiles();
             this.playerPoints += this.bonusPoints;
@@ -151,6 +174,7 @@ public class GameController {
              * i wysyłającą informację do serwera aby odblokował drugiego gracza
              */
         }
+        this.client.makeMove(showImgArr);
     }
 
     public void hideTiles(){
