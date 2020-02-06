@@ -30,12 +30,12 @@
         <Button id="tile17" fx:id="tile17" layoutX="224.0" layoutY="452.0" mnemonicParsing="false" onAction="#tileClick" styleClass="tile" GridPane.columnIndex="2" GridPane.rowIndex="3" />
         <Button id="tile18" fx:id="tile18" layoutX="325.0" layoutY="455.0" mnemonicParsing="false" onAction="#tileClick" styleClass="tile" GridPane.columnIndex="3" GridPane.rowIndex="3" />
         <Button id="tile19" fx:id="tile19" layoutX="430.0" layoutY="455.0" mnemonicParsing="false" onAction="#tileClick" styleClass="tile" GridPane.columnIndex="4" GridPane.rowIndex="3" />
-      <Text fill="#b4d4e4" layoutX="511.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nick gracza 1:" textAlignment="CENTER" wrappingWidth="289.845703125">
+      <Text fill="#b4d4e4" layoutX="511.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Punkty gracza 1:" textAlignment="CENTER" wrappingWidth="289.845703125">
          <font>
             <Font size="35.0" />
          </font>
       </Text>
-      <Text fill="#b4d4e4" layoutX="511.0" layoutY="201.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nick gracza 2:" textAlignment="CENTER" wrappingWidth="289.845703125">
+      <Text fill="#b4d4e4" layoutX="511.0" layoutY="201.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Punkty gracza 2:" textAlignment="CENTER" wrappingWidth="289.845703125">
          <font>
             <Font size="35.0" />
          </font>
@@ -55,17 +55,17 @@
             <Font size="45.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="572.0" layoutY="506.0" prefHeight="43.0" prefWidth="181.0" style="-fx-background-color: green;" styleClass="buttons" text="Gracz X" textFill="#1e1d1d">
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="572.0" layoutY="506.0" prefHeight="43.0" prefWidth="181.0" style="-fx-background-color: green;" styleClass="buttons" text="" textFill="#1e1d1d">
          <font>
             <Font size="45.0" />
          </font>
       </Label>
-      <Label fx:id="playerSecondPoints" alignment="CENTER" contentDisplay="CENTER" layoutX="565.0" layoutY="366.0" prefHeight="43.0" prefWidth="181.0" style="-fx-background-color: green;" styleClass="buttons" text="Gracz X" textFill="#1e1d1d">
+      <Label  fx:id="movePlayerLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="565.0" layoutY="366.0" prefHeight="43.0" prefWidth="181.0" style="-fx-background-color: green;" styleClass="buttons" text="Przeciwnik" textFill="#1e1d1d">
          <font>
             <Font size="45.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="565.0" layoutY="223.0" prefHeight="43.0" prefWidth="181.0" style="-fx-background-color: green;" styleClass="buttons" text="Gracz 2" textFill="#1e1d1d">
+      <Label fx:id="playerSecondPoints" alignment="CENTER" contentDisplay="CENTER" layoutX="565.0" layoutY="223.0" prefHeight="43.0" prefWidth="181.0" style="-fx-background-color: green;" styleClass="buttons" text="Gracz 2" textFill="#1e1d1d">
          <font>
             <Font size="45.0" />
          </font>

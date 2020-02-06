@@ -4,9 +4,11 @@ import java.io.*;
 import java.net.Socket;
 import java.util.ArrayList;
 import com.google.gson.Gson;
+import javafx.scene.control.Button;
 
 public class ClientController extends Thread {
 
+    public boolean gameNotStart = true;
     protected ArrayList<String> tilesMap = new ArrayList<String>();
     private final static Gson GSON = new Gson();
     public Boolean stepLock = false;
@@ -35,8 +37,16 @@ public class ClientController extends Thread {
                     System.out.println("Twoj ruch");
                 }
                 if (line.equals("[broadcast]:Game pushed")) {
+                    this.gameNotStart = false;
                     while((line = reader.readLine()) != "endTilesMap") {
-                        tilesMap.add(line);
+                        if(line.contains("img"))
+                        {
+                            tilesMap.add(line);
+                        }
+                        else
+                        {
+                            break;
+                        }
                     }
                 }
                 System.out.println(line);
@@ -52,6 +62,12 @@ public class ClientController extends Thread {
                 new GameMoveDto(new GameMoveDto.TileDto(showImgArr[0], showImgArr[2]), new GameMoveDto.TileDto(showImgArr[1], showImgArr[3]))));
         writer.flush();
     }
+
+    public void sendMessage(Button clickedButton) {
+        GameMoveDto dto = new GameMoveDto(new GameMoveDto.TileDto(clickedButton.getId(), "xxx"), new GameMoveDto.TileDto(clickedButton.getId(), "zzz"));
+        writer.println(GSON.toJson(dto));
+    }
+
     public static class GameMoveDto {
         TileDto tile1;
         TileDto tile2;
