@@ -13,6 +13,8 @@ public class ClientController extends Thread {
     private final static Gson GSON = new Gson();
     public Boolean stepLock = false;
     PrintWriter writer;
+    String myPoints = "1000";
+    String enemyPoints = "1000";
     public ClientController() {
     }
 
@@ -35,6 +37,10 @@ public class ClientController extends Thread {
                 if (line.equals("get_move")) {
                     this.stepLock = true;
                     System.out.println("Twoj ruch");
+                }
+                if (line.equals("successMove") || line.equals("failMove")) {
+                    this.myPoints = reader.readLine();
+                    this.enemyPoints = reader.readLine();
                 }
                 if (line.equals("[broadcast]:Game pushed")) {
                     this.gameNotStart = false;
@@ -63,8 +69,8 @@ public class ClientController extends Thread {
         writer.flush();
     }
 
-    public void sendMessage(Button clickedButton) {
-        GameMoveDto dto = new GameMoveDto(new GameMoveDto.TileDto(clickedButton.getId(), "xxx"), new GameMoveDto.TileDto(clickedButton.getId(), "zzz"));
+    public void sendMessage(String[] imgArr) {
+        GameMoveDto dto = new GameMoveDto(new GameMoveDto.TileDto(imgArr[0], imgArr[2]), new GameMoveDto.TileDto(imgArr[1], imgArr[3]));
         writer.println(GSON.toJson(dto));
     }
 

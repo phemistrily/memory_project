@@ -17,6 +17,7 @@ class MyTimerTask extends TimerTask {
 //        this.param.stepLock = this.param.client.stepLock;
         this.param.waitingForPlayer.setVisible(this.param.client.gameNotStart);
         this.param.tilesMap = this.param.client.tilesMap.toArray(new String[0]);
+        Platform.runLater(new UpdatePoints(this.param, this.param.client.myPoints, this.param.client.enemyPoints));
         if(this.param.client.stepLock == true)
         {
             Platform.runLater(new UpdateYourMove(this.param, "Twój ruch"));
