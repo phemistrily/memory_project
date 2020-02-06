@@ -11,12 +11,18 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.util.Duration;
 
+import javax.swing.*;
 import java.util.*;
+import java.util.Timer;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class GameController {
     @FXML
     public Label waitingForPlayer;
+    @FXML
+    public Label playerFirstPoints;
+    @FXML
+    public Label playerSecondPoints;
     @FXML
     private Button tile0, tile1, tile2, tile3, tile4;
     @FXML
@@ -25,10 +31,6 @@ public class GameController {
     private Button tile10, tile11, tile12, tile13, tile14;
     @FXML
     private Button tile15, tile16, tile17, tile18, tile19;
-    @FXML
-    private Label playerFirstPoints;
-    @FXML
-    private Label playerSecondPoints;
     @FXML
     public Label movePlayerLabel;
 
@@ -130,7 +132,7 @@ public class GameController {
             showImg(clickedButton, countClickedTiles); //TODO
             countClickedTiles++;
             if(countClickedTiles == 2){
-                client.sendMessage(clickedButton);
+                client.sendMessage(showImgArr);
                 Thread thread = new Thread(new Runnable() {
                     @Override
                     public void run() {
