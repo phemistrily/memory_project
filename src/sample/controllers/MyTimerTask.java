@@ -13,17 +13,18 @@ class MyTimerTask extends TimerTask {
 
     @Override
     public void run() {
+        Platform.runLater(new UpdateYourMove(this.param, "Twój ruch"));
 //        this.param.stepLock = this.param.client.stepLock;
         this.param.waitingForPlayer.setVisible(this.param.client.gameNotStart);
         this.param.tilesMap = this.param.client.tilesMap.toArray(new String[0]);
         if(this.param.client.stepLock == true)
         {
-            Platform.runLater(new UpdateYourMove("Twój ruch"));
+            Platform.runLater(new UpdateYourMove(this.param, "Twój ruch"));
             //this.param.movePlayerLabel.setText("Twój ruch");
         }
         else
         {
-            this.param.movePlayerLabel.setText("Przeciwnik");
+            Platform.runLater(new UpdateYourMove(this.param, "Ruch przeciwnika"));
         }
 //        for (int i = 0; i < this.param.tilesMap.length;i++)
 //        {

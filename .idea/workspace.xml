@@ -2,22 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sample/controllers/UpdateYourMove.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/memory_project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/memory_project.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/memory_project/sample/controllers/ClientController$GameMoveDto$TileDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/memory_project/sample/controllers/ClientController$GameMoveDto$TileDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/memory_project/sample/controllers/ClientController$GameMoveDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/memory_project/sample/controllers/ClientController$GameMoveDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/memory_project/sample/controllers/ClientController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/memory_project/sample/controllers/ClientController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/memory_project/sample/controllers/GameController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/memory_project/sample/controllers/GameController$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/memory_project/sample/controllers/GameController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/memory_project/sample/controllers/GameController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/memory_project/sample/controllers/MyTimerTask.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/memory_project/sample/controllers/MyTimerTask.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/memory_project/sample/fxmlData/game.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/memory_project/sample/fxmlData/game.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/controllers/ClientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/controllers/ClientController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/memory_project/sample/controllers/UpdateYourMove.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/memory_project/sample/controllers/UpdateYourMove.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sample/controllers/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/controllers/GameController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sample/controllers/MyTimerTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/controllers/MyTimerTask.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/fxmlData/game.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/fxmlData/game.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/controllers/UpdateYourMove.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/controllers/UpdateYourMove.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -78,8 +67,13 @@
             <file pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/src/sample/controllers/UpdateYourMove.java">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="119">
-                    <caret line="10" column="36" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
+                  <state relative-caret-position="272">
+                    <caret line="16" column="14" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
+                    <folding>
+                      <element signature="imports" expanded="true" />
+                      <element signature="e#207#208#0" expanded="true" />
+                      <element signature="e#254#255#0" expanded="true" />
+                    </folding>
                   </state>
                 </provider>
               </entry>
@@ -95,8 +89,8 @@
             <file pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/src/sample/controllers/MyTimerTask.java">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="510">
-                    <caret line="32" column="1" lean-forward="true" selection-start-line="32" selection-start-column="1" selection-end-line="32" selection-end-column="1" />
+                  <state relative-caret-position="408">
+                    <caret line="26" column="78" selection-start-line="26" selection-start-column="78" selection-end-line="26" selection-end-column="78" />
                     <folding>
                       <element signature="imports" expanded="true" />
                     </folding>
@@ -175,8 +169,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/sample/controllers/GameController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="95" column="55" lean-forward="true" selection-start-line="95" selection-start-column="55" selection-end-line="95" selection-end-column="55" />
+            <state relative-caret-position="204">
+              <caret line="30" column="37" selection-start-line="30" selection-start-column="37" selection-end-line="32" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -205,9 +199,9 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>1000</find>
-      <find>nick</find>
       <find>showImg</find>
       <find>playerfirstPoints</find>
+      <find>nick</find>
     </findStrings>
   </component>
   <component name="FindManager">
@@ -229,8 +223,8 @@
         <option value="$PROJECT_DIR$/src/sample/controllers/ClientController.java" />
         <option value="$PROJECT_DIR$/src/sample/fxmlData/game.fxml" />
         <option value="$PROJECT_DIR$/src/sample/controllers/GameController.java" />
-        <option value="$PROJECT_DIR$/src/sample/controllers/MyTimerTask.java" />
         <option value="$PROJECT_DIR$/src/sample/controllers/UpdateYourMove.java" />
+        <option value="$PROJECT_DIR$/src/sample/controllers/MyTimerTask.java" />
       </list>
     </option>
   </component>
@@ -652,14 +646,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/fxmlData/game.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="62" column="36" selection-start-line="62" selection-start-column="21" selection-end-line="62" selection-end-column="36" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/controllers/ClientController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-119">
@@ -677,10 +663,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/fxmlData/game.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="271">
+          <caret line="62" column="36" selection-start-line="62" selection-start-column="21" selection-end-line="62" selection-end-column="36" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/controllers/UpdateYourMove.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="14" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#207#208#0" expanded="true" />
+            <element signature="e#254#255#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/controllers/GameController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="95" column="55" lean-forward="true" selection-start-line="95" selection-start-column="55" selection-end-line="95" selection-end-column="55" />
+        <state relative-caret-position="204">
+          <caret line="30" column="37" selection-start-line="30" selection-start-column="37" selection-end-line="32" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -689,18 +695,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/controllers/MyTimerTask.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="32" column="1" lean-forward="true" selection-start-line="32" selection-start-column="1" selection-end-line="32" selection-end-column="1" />
+        <state relative-caret-position="408">
+          <caret line="26" column="78" selection-start-line="26" selection-start-column="78" selection-end-line="26" selection-end-column="78" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/controllers/UpdateYourMove.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="10" column="36" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
         </state>
       </provider>
     </entry>

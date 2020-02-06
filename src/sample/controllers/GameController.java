@@ -87,7 +87,7 @@ public class GameController {
 //                });
 //            }
 //        }, 2000, 2000);
-        Timer timer = new Timer();
+        Timer timer = new java.util.Timer();
         timer.schedule(new MyTimerTask(this), 2000, 2000);
     }
 
