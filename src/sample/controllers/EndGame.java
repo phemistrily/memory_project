@@ -19,6 +19,20 @@ public class EndGame implements Runnable {
         this.playerId = playerId;
     }
 
+    public void SaveGameResult() {
+        SqlConnector sqlConnector = new SqlConnector();
+        /*
+        String uuid;
+        String time;
+
+        String sqlPlayer1 = "INSERT INTO player_results (uuid, score, time) VALUES ('"+uuid+"','"+myPoints+"', '"+time+"')";
+        sqlConnector.insertData(sqlPlayer1);
+
+        String sqlPlayer2 = "INSERT INTO player_results (uuid, score, time) VALUES ('"+uuid+"','"+enemyPoints+"', '"+time+"')";
+        sqlConnector.insertData(sqlPlayer2);
+        */
+    }
+
     @Override
     public void run() {
         FXMLLoader loader = new FXMLLoader();
