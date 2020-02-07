@@ -33,6 +33,19 @@ public class SummaryController {
     }
 
     public void summaryView(ActionEvent actionEvent) {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("../fxmlData/summary.fxml"));
+        AnchorPane pane = null;
+        try {
+            pane = loader.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        TableController tableController = loader.getController();
+        /**
+         * Set scene and pass data through the scenes
+         */
+        primaryStage.getChildren().setAll(pane);
     }
 
     public void initData(String myPoints, String enemyPoints) {

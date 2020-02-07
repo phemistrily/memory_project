@@ -18,7 +18,7 @@ public class SqlConnector {
         switch (connectionName)
         {
             case "localhost":
-                String dbName="memory_gra";
+                String dbName="memory_game";
                 String user="root";
                 String password="";
 
