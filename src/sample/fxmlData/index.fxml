@@ -8,7 +8,7 @@
 
 <AnchorPane fx:id="primaryStage" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" styleClass="anchorPane" stylesheets="@../style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.IndexController">
     <children>
-        <Button fx:id="buttonPlaySolo" layoutX="63.0" layoutY="274.0" minHeight="23.0" minWidth="153.0" mnemonicParsing="false" onAction="#PlaySoloAction" prefHeight="33.0" prefWidth="157.0" styleClass="buttons" stylesheets="@../style.css" text="Gra pojedyńcza">
+        <Button fx:id="buttonPlaySolo" layoutX="63.0" layoutY="274.0" minHeight="23.0" minWidth="153.0" mnemonicParsing="false" onAction="#PlaySoloAction" prefHeight="33.0" prefWidth="157.0" styleClass="buttons" stylesheets="@../style.css" text="Gra online">
             <font>
                 <Font name="Verdana" size="12.0" />
             </font>
@@ -19,11 +19,6 @@
             </font>
         </Label>
         <Separator layoutX="63.0" layoutY="75.0" prefHeight="15.0" prefWidth="672.0" />
-      <Button fx:id="buttonPlayOnline" layoutX="63.0" layoutY="378.0" minHeight="23.0" minWidth="153.0" mnemonicParsing="false" onAction="#PlayOnlineAction" prefHeight="33.0" prefWidth="157.0" styleClass="buttons" stylesheets="@../style.css" text="Gra online">
-         <font>
-            <Font name="Verdana" size="12.0" />
-         </font>
-      </Button>
       <Button fx:id="buttonExitGame" layoutX="629.0" layoutY="495.0" minHeight="23.0" minWidth="153.0" mnemonicParsing="false" onAction="#ExitAction" prefHeight="33.0" prefWidth="157.0" styleClass="buttons" stylesheets="@../style.css" text="Wyjdź z gry">
          <font>
             <Font name="Verdana" size="12.0" />
@@ -34,10 +29,15 @@
             <Font name="Yu Gothic Medium" size="9.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="20.0" layoutY="177.0" minHeight="53.0" minWidth="348.0" prefHeight="68.0" prefWidth="348.0" text="Wybierz tryb gry" textAlignment="CENTER" textFill="#ffebee">
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="20.0" layoutY="177.0" minHeight="53.0" minWidth="348.0" prefHeight="68.0" prefWidth="528.0" text="Kliknij aby rozpocząć gre:" textAlignment="CENTER" textFill="#ffebee">
          <font>
             <Font name="Yu Gothic Medium" size="40.0" />
          </font>
       </Label>
+      <Button fx:id="buttonSummary" layoutX="63.0" layoutY="495.0" minHeight="23.0" minWidth="153.0" mnemonicParsing="false" onAction="#SummaryView" prefHeight="33.0" prefWidth="157.0" styleClass="buttons" stylesheets="@../style.css" text="Podsumowanie">
+         <font>
+            <Font name="Verdana" size="12.0" />
+         </font>
+      </Button>
     </children>
 </AnchorPane>
