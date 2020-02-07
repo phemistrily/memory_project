@@ -10,11 +10,13 @@ public class EndGame implements Runnable {
     private final GameController param;
     private final String myPoints;
     private final String enemyPoints;
+    private final String playerId;
 
-    public EndGame(GameController param, String myPoints, String enemyPoints) {
+    public EndGame(GameController param, String myPoints, String enemyPoints, String playerId) {
         this.param = param;
         this.myPoints = myPoints;
         this.enemyPoints = enemyPoints;
+        this.playerId = playerId;
     }
 
     @Override
@@ -28,7 +30,7 @@ public class EndGame implements Runnable {
             e.printStackTrace();
         }
         SummaryController summaryController = loader.getController();
-        summaryController.initData(this.myPoints, this.enemyPoints);
+        summaryController.initData(this.myPoints, this.enemyPoints, this.playerId);
         /**
          * Set scene and pass data through the scenes
          */

@@ -20,6 +20,7 @@ public class ClientController extends Thread {
     public ArrayList<String> removeButtonList = new ArrayList<String>(20);
     public Integer countRemoveButton = 0;
     public boolean endGame = false;
+    public String playerId;
 
     public ClientController() {
     }
@@ -40,6 +41,11 @@ public class ClientController extends Thread {
 
             String line;
             while ((line = reader.readLine()) != null) {
+                if (line.equals("WELCOME"))
+                {
+                    line = reader.readLine();
+                    this.playerId = line;
+                }
                 if (line.equals("get_move")) {
                     this.stepLock = true;
                     System.out.println("Twoj ruch");

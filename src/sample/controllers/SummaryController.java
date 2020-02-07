@@ -48,7 +48,7 @@ public class SummaryController {
         primaryStage.getChildren().setAll(pane);
     }
 
-    public void initData(String myPoints, String enemyPoints) {
+    public void initData(String myPoints, String enemyPoints, String playerId) {
         if(Integer.valueOf(myPoints) > Integer.valueOf(enemyPoints))
         {
             this.WinnerPointsButton.setText(myPoints);
