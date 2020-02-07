@@ -6,9 +6,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="primaryStage" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" styleClass="anchorPane" stylesheets="@../style.css" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.SummaryController">
+<AnchorPane fx:id="primaryStage" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" styleClass="anchorPane" stylesheets="@../style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.SummaryController">
     <children>
-        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="-1.0" layoutY="14.0" minHeight="53.0" minWidth="789.0" prefHeight="68.0" prefWidth="800.0" text="GRATULACJE" textAlignment="CENTER" textFill="#ffebee">
+        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="-1.0" layoutY="14.0" minHeight="53.0" minWidth="789.0" prefHeight="68.0" prefWidth="800.0" text="Wynik gry" textAlignment="CENTER" textFill="#ffebee">
             <font>
                 <Font name="Yu Gothic Medium" size="46.0" />
             </font>
