@@ -13,6 +13,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import sample.entities.PlayerScoresEntity;
 
 import java.net.URL;
 import java.sql.Connection;
@@ -42,30 +43,33 @@ public class TableController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        //zainicjowac polaczenie
-        SqlConnector sqlConnector = new SqlConnector();
-        ResultSet rs = sqlConnector.getData("SELECT playerName,score,time from player_results ");
+        this.initializeFactory();
+        this.getScores();
 
-//        while (true){
-//            try {
-//                if (!rs.next()) break;
-//            } catch (SQLException e) {
-//                e.printStackTrace();
-//            }
-//            try {
-//                oblist.add(new ModelTable(rs.getString("playerName"),
-//                        rs.getString("score"),
-//                        rs.getString("time")));
-//            } catch (SQLException e) {
-//                e.printStackTrace();
-//            }
-//
-//        }
-     TablePlayerName.setCellValueFactory(new PropertyValueFactory<>("TablePlayerName"));
-     TablePoints.setCellValueFactory(new PropertyValueFactory<>("TablePoints"));
-     TableTime.setCellValueFactory(new PropertyValueFactory<>("TableTime"));
 
-     table.setItems(oblist);
+    }
+
+    private void getScores() {
+        PlayerScoresEntity psc = new PlayerScoresEntity();
+        ResultSet scores = psc.getScores();
+        try {
+            this.putScoresToTableModel(scores);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        table.setItems(oblist);
+    }
+
+    private void putScoresToTableModel(ResultSet scores) throws SQLException {
+        while(scores.next()) {
+            oblist.add(new ModelTable(scores.getString("TablePlayerName"),scores.getString("TablePoints"),scores.getString("TableTime")));
+        }
+    }
+
+    private void initializeFactory() {
+        TablePlayerName.setCellValueFactory(new PropertyValueFactory<>("TablePlayerName"));
+        TablePoints.setCellValueFactory(new PropertyValueFactory<>("TablePoints"));
+        TableTime.setCellValueFactory(new PropertyValueFactory<>("TableTime"));
     }
 
     @FXML
