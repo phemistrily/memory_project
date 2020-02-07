@@ -15,6 +15,8 @@ public class ClientController extends Thread {
     PrintWriter writer;
     String myPoints = "1000";
     String enemyPoints = "1000";
+    public ArrayList<String> removeButtonList = new ArrayList<String>(20);
+    public Integer countRemoveButton = 0;
     public ClientController() {
     }
 
@@ -41,6 +43,20 @@ public class ClientController extends Thread {
                 if (line.equals("successMove") || line.equals("failMove")) {
                     this.myPoints = reader.readLine();
                     this.enemyPoints = reader.readLine();
+                }
+                if(line.equals("syncPoints")) {
+                    this.myPoints = reader.readLine();
+                    this.enemyPoints = reader.readLine();
+                }
+                if(line.equals("syncTiles")) {
+                    this.countRemoveButton = Integer.valueOf(reader.readLine());
+                    this.removeButtonList.clear();
+                    System.out.println("Added");
+                    while(!(line = reader.readLine()).equals("endSyncTiles"))
+                    {
+                        this.removeButtonList.add(line);
+                        System.out.println(line);
+                    }
                 }
                 if (line.equals("[broadcast]:Game pushed")) {
                     this.gameNotStart = false;

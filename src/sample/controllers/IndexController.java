@@ -18,7 +18,7 @@ import java.util.ResourceBundle;
 public class IndexController {
 
     @FXML
-    private AnchorPane primaryStage;
+    public AnchorPane primaryStage;
 
     @FXML
     private Button buttonPlaySolo;

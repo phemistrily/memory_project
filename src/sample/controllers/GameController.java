@@ -9,6 +9,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.layout.AnchorPane;
 import javafx.util.Duration;
 
 import javax.swing.*;
@@ -24,13 +25,15 @@ public class GameController {
     @FXML
     public Label playerSecondPoints;
     @FXML
-    private Button tile0, tile1, tile2, tile3, tile4;
+    public AnchorPane primary;
     @FXML
-    private Button tile5, tile6, tile7, tile8, tile9;
+    public Button tile0, tile1, tile2, tile3, tile4;
     @FXML
-    private Button tile10, tile11, tile12, tile13, tile14;
+    public Button tile5, tile6, tile7, tile8, tile9;
     @FXML
-    private Button tile15, tile16, tile17, tile18, tile19;
+    public Button tile10, tile11, tile12, tile13, tile14;
+    @FXML
+    public Button tile15, tile16, tile17, tile18, tile19;
     @FXML
     public Label movePlayerLabel;
 
@@ -42,11 +45,11 @@ public class GameController {
     };
 
     private String[] showImgArr = new String[4];
-    private Button[] showButtonArr = new Button[2];
+    public Button[] showButtonArr = new Button[2];
     private Integer countClickedTiles = 0;
-    private String[] removeButtonArr = new String[20];
-    private ArrayList<String> removeButtonList = new ArrayList<String>(20);//usuniete
-    private Integer countRemoveButton = 0; // koniec gry jak 20
+    private String[] removeButtonArr = new String[200];
+    public ArrayList<String> removeButtonList = new ArrayList<String>(200);//usuniete
+    public Integer countRemoveButton = 0; // koniec gry jak 20
     public Boolean stepLock = true;
     private Integer playerPoints = 1000;
     private Integer penaltyPoints = 100;
@@ -153,9 +156,15 @@ public class GameController {
      * Sprawdza czy odkryte kafelki są takie same
      */
     public void checkShowTiles(){
-        if(showImgArr[0] == showImgArr[1] && showImgArr[2] != showImgArr[3]){
-            removeTiles();
-            this.playerPoints += this.bonusPoints;
+        System.out.println("CHECKSHOWTILES");
+        for(int i = 0; i < 4;i++)
+        {
+            System.out.println(showImgArr[i]);
+        }
+        if((this.showImgArr[0].equals(this.showImgArr[1])) && (!this.showImgArr[2].equals(this.showImgArr[3])))
+        {
+            System.out.println("wchodzi tutaj");
+            this.removeTiles();
             countClickedTiles = 0;
             if(countRemoveButton == 20){
                 System.out.println("koniec gry");
@@ -167,8 +176,8 @@ public class GameController {
                  */
             }
         } else {
-            hideTiles();    //ukrywam kafelki
-            this.playerPoints -= this.penaltyPoints;
+            System.out.println("nie udało się");
+            hideTiles();    //ukrywam kafelki\
             countClickedTiles = 0;  //ustawiam countClickedTiles na 0 aby móc dalej odkrywać kafelki
             /**
              * stepLock = true;     np blokada w tym programie i to co poniżej
@@ -186,9 +195,10 @@ public class GameController {
     }
 
     public void removeTiles(){
+        System.out.println("kasowanie kafelkow");
         for(Integer i = 0; i<2; i++){
             removeButtonList.add(showButtonArr[i].getId());
-            //removeButtonArr[countRemoveButton] = showButtonArr[i].getId();
+            removeButtonArr[countRemoveButton] = showButtonArr[i].getId();
             countRemoveButton++;
             showButtonArr[i].getStyleClass().remove(showImgArr[i]);
             showButtonArr[i].getStyleClass().add("tileRemove");
