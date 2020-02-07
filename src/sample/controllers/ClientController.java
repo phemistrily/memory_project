@@ -21,6 +21,8 @@ public class ClientController extends Thread {
     public Integer countRemoveButton = 0;
     public boolean endGame = false;
     public String playerId;
+    public long startGameTime = 0;
+    public long endGameTime = 0;
 
     public ClientController() {
     }
@@ -68,8 +70,14 @@ public class ClientController extends Thread {
                         System.out.println(line);
                     }
                 }
+                if (line.equals("startGameTime"))
+                {
+                    this.startGameTime = Long.parseLong(reader.readLine());
+
+                }
                 if (line.equals("endgame"))
                 {
+                    this.endGameTime = Long.parseLong(reader.readLine());
                     this.endGame = true;
                 }
                 if (line.equals("[broadcast]:Game pushed")) {
