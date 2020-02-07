@@ -46,6 +46,7 @@ public class UpdateTiles implements Runnable {
             if(!map.get(ins).getStyleClass().contains("tileRemove"))
             {
                 map.get(ins).getStyleClass().add("tileRemove");
+                map.get(ins).setDisable(true);
             }
         }
     }
