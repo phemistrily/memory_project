@@ -1,0 +1,52 @@
+-- phpMyAdmin SQL Dump
+-- version 4.9.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Czas generowania: 07 Lut 2020, 20:40
+-- Wersja serwera: 10.4.8-MariaDB
+-- Wersja PHP: 7.3.10
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+--
+-- Baza danych: `memory_game`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Struktura tabeli dla tabeli `player_results`
+--
+
+CREATE TABLE `player_results` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `uuid` varchar(255) NOT NULL,
+  `score` int(10) UNSIGNED NOT NULL,
+  `time` varchar(255) NOT NULL,
+  `uuid_opponent` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Indeksy dla zrzutów tabel
+--
+
+--
+-- Indeksy dla tabeli `player_results`
+--
+ALTER TABLE `player_results`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT dla tabeli `player_results`
+--
+ALTER TABLE `player_results`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+COMMIT;
