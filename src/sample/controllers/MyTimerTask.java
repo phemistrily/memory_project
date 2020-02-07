@@ -40,7 +40,7 @@ class MyTimerTask extends TimerTask {
         if(this.param.client.endGame)
         {
             Platform.runLater(new EndGame(this.param, this.param.client.myPoints, this.param.client.enemyPoints));
-
+            this.param.client.endGame = false;
         }
     }
 }

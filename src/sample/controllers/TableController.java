@@ -46,21 +46,21 @@ public class TableController implements Initializable {
         SqlConnector sqlConnector = new SqlConnector();
         ResultSet rs = sqlConnector.getData("SELECT playerName,score,time from player_results ");
 
-        while (true){
-            try {
-                if (!rs.next()) break;
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-            try {
-                oblist.add(new ModelTable(rs.getString("playerName"),
-                        rs.getString("score"),
-                        rs.getString("time")));
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-
-        }
+//        while (true){
+//            try {
+//                if (!rs.next()) break;
+//            } catch (SQLException e) {
+//                e.printStackTrace();
+//            }
+//            try {
+//                oblist.add(new ModelTable(rs.getString("playerName"),
+//                        rs.getString("score"),
+//                        rs.getString("time")));
+//            } catch (SQLException e) {
+//                e.printStackTrace();
+//            }
+//
+//        }
      TablePlayerName.setCellValueFactory(new PropertyValueFactory<>("TablePlayerName"));
      TablePoints.setCellValueFactory(new PropertyValueFactory<>("TablePoints"));
      TableTime.setCellValueFactory(new PropertyValueFactory<>("TableTime"));
