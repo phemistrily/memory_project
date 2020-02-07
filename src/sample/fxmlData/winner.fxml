@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="primaryStage" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" styleClass="anchorPane" stylesheets="@../style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.IndexController">
+<AnchorPane fx:id="primaryStage" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" styleClass="anchorPane" stylesheets="@../style.css" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.SummaryController">
     <children>
         <Label alignment="CENTER" contentDisplay="CENTER" layoutX="-1.0" layoutY="14.0" minHeight="53.0" minWidth="789.0" prefHeight="68.0" prefWidth="800.0" text="GRATULACJE" textAlignment="CENTER" textFill="#ffebee">
             <font>
@@ -59,7 +59,7 @@
             <Font size="45.0" />
          </font>
       </Label>
-      <Button fx:id="buttonSummary" layoutX="42.0" layoutY="495.0" minHeight="23.0" minWidth="153.0" mnemonicParsing="false" onAction="#SummaryView" prefHeight="33.0" prefWidth="157.0" styleClass="buttons" stylesheets="@../style.css" text="Podsumowanie">
+      <Button fx:id="buttonSummary" layoutX="42.0" layoutY="495.0" minHeight="23.0" minWidth="153.0" mnemonicParsing="false" onAction="#summaryView" prefHeight="33.0" prefWidth="157.0" styleClass="buttons" stylesheets="@../style.css" text="Podsumowanie">
          <font>
             <Font name="Verdana" size="12.0" />
          </font>

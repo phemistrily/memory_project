@@ -4,7 +4,9 @@ import java.io.*;
 import java.net.Socket;
 import java.util.ArrayList;
 import com.google.gson.Gson;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
+import javafx.scene.layout.AnchorPane;
 
 public class ClientController extends Thread {
 
@@ -17,6 +19,8 @@ public class ClientController extends Thread {
     String enemyPoints = "1000";
     public ArrayList<String> removeButtonList = new ArrayList<String>(20);
     public Integer countRemoveButton = 0;
+    public boolean endGame = false;
+
     public ClientController() {
     }
 
@@ -57,6 +61,10 @@ public class ClientController extends Thread {
                         this.removeButtonList.add(line);
                         System.out.println(line);
                     }
+                }
+                if (line.equals("endgame"))
+                {
+                    this.endGame = true;
                 }
                 if (line.equals("[broadcast]:Game pushed")) {
                     this.gameNotStart = false;

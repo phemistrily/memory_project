@@ -7,7 +7,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="600" maxWidth="800.0" minHeight="800.0" minWidth="600.0" styleClass="anchorPane" stylesheets="@../style.css" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.GameController">
+<AnchorPane fx:id="primaryStage" maxHeight="600" maxWidth="800.0" minHeight="800.0" minWidth="600.0" styleClass="anchorPane" stylesheets="@../style.css" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.GameController">
 
     <children>
         <Button id="tile0" fx:id="tile0" layoutX="23.0" layoutY="25.0" mnemonicParsing="false" onAction="#tileClick" styleClass="tile" />
