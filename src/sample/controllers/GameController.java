@@ -51,9 +51,7 @@ public class GameController {
     public ArrayList<String> removeButtonList = new ArrayList<String>(200);//usuniete
     public Integer countRemoveButton = 0; // koniec gry jak 20
     public Boolean stepLock = true;
-    private Integer playerPoints = 1000;
-    private Integer penaltyPoints = 100;
-    private Integer bonusPoints = 500;
+    private String playerPoints = "odświeżam";
     protected ClientController client;
 
     public GameController() {
@@ -76,8 +74,6 @@ public class GameController {
 
     @FXML
     void initialize() {
-        this.playerFirstPoints.setText(String.valueOf(this.playerPoints));
-        this.playerSecondPoints.setText(String.valueOf(this.playerPoints));
         this.client = new ClientController();
         
         this.client.start();
@@ -109,7 +105,6 @@ public class GameController {
                 System.out.println("kafelek został już dopasowany - nie możemy odsłonić");
             } else {
                 showTiles(clickedButton);
-                this.playerFirstPoints.setText(String.valueOf(this.playerPoints));
                 System.out.println(clickedButton.getId());
             }
         }
