@@ -6,6 +6,7 @@ import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -13,11 +14,14 @@ import javafx.scene.layout.AnchorPane;
 import javafx.util.Duration;
 
 import javax.swing.*;
+import java.io.IOException;
 import java.util.*;
 import java.util.Timer;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class GameController {
+    @FXML
+    public AnchorPane primaryStage;
     @FXML
     public Label waitingForPlayer;
     @FXML
@@ -90,6 +94,7 @@ public class GameController {
 //        }, 2000, 2000);
         Timer timer = new java.util.Timer();
         timer.schedule(new MyTimerTask(this), 2000, 2000);
+
     }
 
     @FXML
@@ -163,6 +168,7 @@ public class GameController {
             countClickedTiles = 0;
             if(countRemoveButton == 20){
                 System.out.println("koniec gry");
+
                 /**
                  * stepLock = false;    możliwa dalsza gra - defakto gdzieś ze serwera trzeba
                  * tą informację pobierać i ustawiać ale nie tu bo tu to i tak chyba nie ma sensu bo skoro

@@ -1,7 +1,10 @@
 package sample.controllers;
 
 import javafx.application.Platform;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.layout.AnchorPane;
 
+import java.io.IOException;
 import java.util.TimerTask;
 
 class MyTimerTask extends TimerTask {
@@ -34,5 +37,10 @@ class MyTimerTask extends TimerTask {
 //        {
 //            System.out.println(this.param.tilesMap[i]);
 //        }
+        if(this.param.client.endGame)
+        {
+            Platform.runLater(new EndGame(this.param, "Ruch przeciwnika"));
+
+        }
     }
 }
