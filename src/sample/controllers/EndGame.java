@@ -11,12 +11,16 @@ public class EndGame implements Runnable {
     private final String myPoints;
     private final String enemyPoints;
     private final String playerId;
+    private final long startGameTime;
+    private final long endGameTime;
 
-    public EndGame(GameController param, String myPoints, String enemyPoints, String playerId) {
+    public EndGame(GameController param, String myPoints, String enemyPoints, String playerId, long startGameTime, long endGameTime) {
         this.param = param;
         this.myPoints = myPoints;
         this.enemyPoints = enemyPoints;
         this.playerId = playerId;
+        this.startGameTime = startGameTime;
+        this.endGameTime = endGameTime;
     }
 
     public void SaveGameResult() {
@@ -35,6 +39,7 @@ public class EndGame implements Runnable {
 
     @Override
     public void run() {
+        String time = String.valueOf(this.endGameTime - this.startGameTime);
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("../fxmlData/winner.fxml"));
         AnchorPane pane = null;
@@ -44,7 +49,7 @@ public class EndGame implements Runnable {
             e.printStackTrace();
         }
         SummaryController summaryController = loader.getController();
-        summaryController.initData(this.myPoints, this.enemyPoints, this.playerId);
+        summaryController.initData(this.myPoints, this.enemyPoints, this.playerId, time);
         /**
          * Set scene and pass data through the scenes
          */

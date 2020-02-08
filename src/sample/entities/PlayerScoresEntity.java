@@ -22,4 +22,9 @@ public class PlayerScoresEntity implements SqlInterface {
         ResultSet scores = sqlConnector.getData(query);
         return scores;
     }
+
+    public void pushData(String points, String playerId, String time) {
+        String createQuery = "INSERT INTO player_results (uuid, score, time) VALUES ('" + playerId + "','" + points + "','" + time + "')";
+        sqlConnector.insertData(createQuery);
+    }
 }
